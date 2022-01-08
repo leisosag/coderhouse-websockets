@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container.mt-5
+    .row.d-flex.justify-content-center
+      .col-md-10
+        .d-flex.align-items-baseline.justify-content-between.mb-5
+          h2 Agregar productos
+          a.btn.btn-primary.mt-3(href='/productos') Ver productos
+    .row.d-flex.justify-content-center
+      .col-md-10
+        form(action='/productos' method='POST')
+          .form-group
+            label(for='name') Nombre del producto
+            input#name.form-control(type='text' name='name')
+          .form-group
+            label(for='price') Precio
+            input#price.form-control(type='number' name='price')
+          .form-group
+            label(for='thumbnail') Thumbnail
+            input#thumbnail.form-control(type='text' name='thumbnail')
+          button.btn.btn-primary.btn-block.mt-3 Agregar
